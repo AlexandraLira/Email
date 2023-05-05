@@ -1,8 +1,9 @@
 package tests;
 
 import com.epam.email.page.aol.AOLHomePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertTrue;
 
 public class LoginTests extends BaseTest {
 
@@ -16,7 +17,7 @@ public class LoginTests extends BaseTest {
                 .openPage()
                 .inputUsername(USERNAME_OF_AOL)
                 .inputPassword(PASSWORD_OF_AOL);
-        Assert.assertTrue(validCredentials.isProfileIconDisplayed(), "User is not logged in");
+        assertTrue(validCredentials.isProfileIconDisplayed(), "User is not logged in");
     }
 
     @Test
@@ -24,7 +25,7 @@ public class LoginTests extends BaseTest {
         AOLHomePage invalidUsername = new AOLHomePage(driver)
                 .openPage()
                 .inputUsername("wrongusername@aol.com");
-        Assert.assertTrue(invalidUsername.isUsernameInvalid(), "Username is valid");
+        assertTrue(invalidUsername.isUsernameInvalid(), "Username is valid");
     }
 
     @Test
@@ -33,7 +34,7 @@ public class LoginTests extends BaseTest {
                 .openPage()
                 .inputUsername(USERNAME_OF_AOL)
                 .inputPassword("wrongpassword");
-        Assert.assertTrue(invalidPasswordValidUsername.isPasswordInvalid(), "Password is valid");
+        assertTrue(invalidPasswordValidUsername.isPasswordInvalid(), "Password is valid");
     }
 
     @Test
@@ -41,7 +42,7 @@ public class LoginTests extends BaseTest {
         AOLHomePage emptyUsername = new AOLHomePage(driver)
                 .openPage()
                 .inputUsername(EMPTY_STRING);
-        Assert.assertTrue(emptyUsername.isUsernameEmpty(), "Username is not empty");
+        assertTrue(emptyUsername.isUsernameEmpty(), "Username is not empty");
     }
 
     @Test
@@ -50,6 +51,6 @@ public class LoginTests extends BaseTest {
                 .openPage()
                 .inputUsername(USERNAME_OF_AOL)
                 .inputPassword(EMPTY_STRING);
-        Assert.assertTrue(emptyPassword.isPasswordEmpty(), "Password is not empty");
+        assertTrue(emptyPassword.isPasswordEmpty(), "Password is not empty");
     }
 }
