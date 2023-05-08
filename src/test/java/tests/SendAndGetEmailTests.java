@@ -15,7 +15,7 @@ public class SendAndGetEmailTests extends BaseTest {
     private static final String PASSWORD_OF_AOL = "test.password321";
     private static final String USERNAME_OF_YAHOO = "test.acc_1@yahoo.com";
     private static final String PASSWORD_OF_YAHOO = "test.password123";
-    private static final String SUBJECT = "tests";
+    private static final String SUBJECT = "test";
     private static final String TEXT = "The email has been sent.";
 
     @Test
