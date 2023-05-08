@@ -9,12 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-
-public class BasePage {
+public abstract class BasePage {
 
     protected WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    protected BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
