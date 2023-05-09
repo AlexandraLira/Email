@@ -4,7 +4,6 @@ import com.epam.email.page.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class AOLMailPage extends BasePage {
 
@@ -28,7 +27,6 @@ public class AOLMailPage extends BasePage {
 
     public AOLMailPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     public AOLMailPage sendEmail(String username, String subject, String text) {
